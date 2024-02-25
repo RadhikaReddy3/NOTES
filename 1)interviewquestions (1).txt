@@ -1,0 +1,624 @@
+1)What are the different modules in spring?
+
+1.spring orm(object relational mapping)
+2.spring core
+3.spring jdbc(java database connection)
+4.spring JMS(java messaging server)
+5.spring jpa(java persistance api(application programming interface)
+6.spring Web
+7.spring rest
+8.spring test
+9.AOP(Ascept oriented programming)
+10.transational
+11.spring validation.
+
+------------------------------------------------------------------------------------
+1.spring data:-To connect with database & access data.
+-------------
+            kaffka,mango db,transations,orm,jdbc,jms,spring jpa,spring validation.
+1.spring web:-
+------------
+(http request generations)
+web socket,portel,servlet,web.
+
+spring core container:-
+-----------------------
+core,beans,contextt,spel
+
+2)Tell me about spring core module ,each annotation purpose,classes and methods?
+----------------------------------------------------------------------------------------------
+
+1.Spring core is one of the module in a spring. It is also called as a spring IOC(inversion of control).
+2.In the core we can do the object creation and object injection.
+3.object creation in annotations are @controller,@service,@component,@repositories.
+4.object injuction purpose @primary,@qualifier,@auto-wired.
+
+
+3)spring jdbc?
+------------------------------------
+1.object creation is done by the jdbc template.
+2.It is reduce the code and resources and need to close. 
+3.Automatic resources close will done by the jdbc template.
+4.For exception handling  try and catch block need not to open.
+-----------------------------------------------------------------
+4)Tell me about spring jpa?
+1.JPA is a Java specification (Java Persistence API) .
+2.It manages relational data in Java applications. 
+3.To access and persist data between Java object, class and relational database, we can use JPA. 
+4.Upon Object-Relation Mapping (ORM), it follows the mechanisms.
+
+5)what are the advantages of spring?
+---------------------------------
+spring advantages
+1.loosly coupled.
+2.pre-defined templete.
+3.easy to simple text.
+4.fast development.
+5.strong abstraction support.
+6.light-weight.
+7.depedencey injection.
+8.secure.
+9.life-cycle.
+10.portable.
+11.supportive.
+12.productive.
+13.life-cycle.
+14.cross cutting behaviour.
+15.configuration.
+16.declarative supportive.
+17.flexiable.
+18.life-cycle.
+----------------------------------------------
+6)tell me about spring rest module?
+1.The Spring REST module, also known as Spring MVC(model view controller), is a part of the Spring Framework. 
+2.that provides support for building RESTful web services. 
+3.It enables developers to create RESTful APIs by defining controllers, handling HTTP requests and responses, and mapping URLs to methods. 
+4.The module also includes features like content negotiation, data binding, and error handling. 
+5.It simplifies the process of creating RESTful services in Java and integrates well with other Spring components for building enterprise-grade applications.
+
+----------------------------------------------------------------
+7)Tell me about spring transation module?
+
+spring transation module
+-----------------------------
+@EnableTransationalModule----class level annotation in spring main method class.
+@Transational-----service class method level annotations.
+----------------------------------------------------------------------
+
+spring rest module:-
+---------------------
+@Requestbody
+@RequestMapping
+@Requestparam
+@postmapping
+@putmapping
+@deletingmapping
+@pathvariable
+@value--file ----upload purpose
+
+
+------------------------------------------------
+spring validation:-
+--------------------
+@valid
+@rang
+@pattern
+@notempty
+@notnull
+@notblank
+@max
+@min
+@email
+@greater
+@past
+@future
+@length
+@size  etc.....
+
+----------------------------------------
+AOP (ascept oriented programming )Annotations:-
+---------------------------------
+@Aspect
+@Afterthrowing
+@around
+@after
+@before
+@execute
+-----------------------------------
+exceptional handling:-
+-------------------------------
+Instead of try and catch block in our program by use these annotations we can handle the exception in our program.
+@RestControllerAdvice--class level annotations
+@ExceptionHandler---method level annotation
+
+---------------------------------------------
+
+spring test module:-
+------------------------
+@test
+@mock
+@extendswith
+@injectmock
+
+-------------------------------------
+
+
+1)What is initalization?
+1.the initalization bean is an interface containing after properties set()method.
+2.a bean can use it to perform a task required after the bean properties are set.
+3.the bean factory invoke after properties set()method once the bean properties are initalized.
+---------------------------------------------------
+2)what is bean life cycle?
+1.Bean life cycle is managed by the spring container.
+2.When we run the program the spring container gets started.
+3.After that, the container creates the instance of a bean as per the request, and then dependencies are injected. 
+4.finally, the bean is destroyed when the spring container is closed. 
+5.if we want to execute some code on the bean instantiation .
+6.and just after closing the spring container, then we can write that code inside the custom init() method and the destroy() method.
+-----------------------------------------------------------------------------------------------------------------------------------------
+2)what is bean name?
+
+1.A spring framework ,A bean name is unique Identifier assigned to each spring bean with in the application context.
+2.It serves as the logical name or key for accessing and referencing specific beans.
+3.by default,spring automatecally assigns a bean name based on the spring annotations.
+such as @component,@service,@repository,@controller,or by specifying the name attribute in XML configuration files.
+--------------------------------------------------------------------------------------------------------------------------------------------
+3) what is @qualifier?
+1.In spring framework,The @qualifier annotation is used in conjunction with the @autowired annotation to specify which been should be
+ injected when multiple beans of the same type are available in the application context.
+2.when you have multiple beans of the same type,spring autowiring mechanism maynot be able to determine which bean should be injected.
+3.In such cases ,you can use the @qualifier annotation to clarify which specific bean should be used.
+---------------------------------------------------------------------------------------------------------------------
+
+what is dependency injuctions?
+1.setters method.
+2.constructors method.
+3.property based.
+-------------------------------------------------------------------------
+which design pattern is used for jdbc?
+1.factory method design pattern.
+2.jdbc database access is based around the factory pattern.
+3.with jdbc javax.sql,data source is the factory object.
+-------------------------------------------------------------------
+
+How to create a bean class?
+
+1.write the simple bean code.
+2.make sure the class path environment variable is set to point to the needed.
+3.compile the bean.
+4.create a mainfest file.
+5.create the jar file.
+
+-------------------------------------------------------------------------------------
+
+1)what is difference between setter injection and constructor injection?
+
+Setter Injection:
+------------------
+1.cyclic depencency  is possible here.
+2.it doesnot follow the thread safety.
+3.setter injection is mutable.
+
+constructor injection
+-------------------------
+1.cyclic dependency is not possible here.
+2.It follows the thread safety.
+3.setter injection is immutable.
+------------------------------------------------------------------------------------------------------------------
+2)what is difference between bean factory and application context?
+
+bean factory
+------------------
+1.Lazy loading.
+2.there is no annotations,by using the syntax.
+3.XMLBeanFactory implements BeanFactory 
+4.Bean factory does not have the ability to push events to the beans. 
+
+application context
+---------------------------
+1.Eager Loading.
+2.annotations are there. 
+3.FileSystemXmlApplicationContext, ClassPathXmlApplicationContext and AnnotationConfigWebApplicationContext implements ApplicationContext. 
+Also, ApplicationContext extends Beanfactory 
+4.Application Context have ability to push events to the beans.
+---------------------------------------------------------------------------------------------------------------------------
+what is IOC?
+it is a spring framework.
+2.container will create the objects.
+3.wire them together ,configure them.
+4.manage their complete life cycle from objects creation to till destruction.
+---------------------------------------------------------------------------------------------------------------------------
+
+3)explain about bean life-cyc4le?
+
+
+1.Instantiation.
+2.dependency injection.
+3.beannameaware
+4.beanfactoryaware.
+5.applicationcontent.
+6.Initalization.
+7.bean ready to use 
+8.destroy.
+------------------------------------------------------------------------------------------------------------------------------
+4)4.how can you create configuration in spring?
+
+1.Spring @Configuration annotation is part of the spring core framework.
+2. Spring Configuration annotation indicates that the class has @Bean definition methods. 
+3.So Spring container can process the class and generate Spring Beans to be used in the application. 
+4.Spring @Configuration annotation allows us to use annotations for dependency injection.
+-------------------------------------------------------------------------------------------------------------------------------
+5.how do you create beans for the pre-define classes?
+
+1.By using @configuration annotation on top of any class to declare that,this class provides one or more @Bean methods and may be processed
+by the spring container to generate bean defination and recieve requests for those beans at runtime.
+-------------------------------------------------------------------------------------------------------------------------------
+default scope of spring?
+single ton.
+-------------
+1.one class has one object but the object injected into multiple differences(places) is called single ton.
+2.by default every been in spring is single tern eventhough we use multiple differences in multiple classes.
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+1)@entity scan?
+
+1.@EntityScan annotation is used when entity classes are not placed in the main application package or its sub-packages. 
+2.In this situation, we would declare the package or list of packages in the main configuration class within @EntityScan annotation. 
+3.This will tell Spring where to find entities used in our application.
+-------------------------------------------------------------------------------------------------------------------------------
+2)Difference types of scope in spring?
+
+1.singleton
+--------------
+1.only one instance of bean per single container.
+
+2.prototype
+-------------
+1.a new instance every time a bean is required.
+
+3.request.
+-----------
+1.single bean instance per http request.
+
+4.session.
+----------
+1.single bean instance per http session.
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+3)@component scan?
+1.The process of discovering Spring Components within classpath of the application is called Component Scanning in Spring. 
+2.Later spring will use them to add in application context.
+3.The classes annotated with @Component, @Controller, @Service, @Repository, @Configuration, @RestController etc will be treated as Spring Components.
+4.@ComponentScan annotation tells Spring that where to look for Spring Components explicitly. 
+5.@ComponentScan annotation is used with @Configuration annotation.
+------------------------------------------------------------------------------------------------------------------------------
+4)what is the difference between bean and sterio types in spring ?.
+1.In Spring, @Component and @Bean, both annotations serve almost the same purpose still they are quite different.
+2.@Component is used to auto-detect and auto-configure beans using classpath scanning. 
+3.@Bean requires manual class instantiation.
+4.Another big difference is that @Component is a class-level annotation whereas @Bean is a method-level annotation.
+-------------------------------------------------------------------------------------------------------------------------------
+5)what is Lossly coupled?
+
+changes happens by one layer will not effect to the another layer. is called loosly coupled nature.
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+6)spring JDBC module ?
+
+Spring JdbcTemplate is a powerful mechanism to connect to the database and execute SQL queries. 
+It internally uses JDBC api, but eliminates a lot of problems of JDBC API.
+-------------------------------------------------------------------------------------------------------------------------------
+
+8)diff between controller and restcontroller?
+
+Controller Annotation:-
+-------------------------	
+1.It was added to the Spring 2.5 version.	
+2.It is a specialized version of stereotype @Component annotation and uses Spring MVC controller.	
+3.This annotation indicates that a class is a “controller” like a web controller.	
+4.While using this we need to add @ResponseBody on every method.	
+5.It returns an object or render a view.	
+
+RestController Annotation:-
+------------------------------------------
+1.It was added to the Spring 4.0 version.
+2.It is a combination of @Controller and @ResponseBody.
+3.This annotation indicates that a “controller” where @ResponseBody is by default.
+4.While using this we don't need to add @ResponseBody on every method. 
+5.It returns a domain object.
+
+-----------------------------------------------------------------------------------------------------------------------------
+9)what is the purpose of IOC?
+1.Spring IoC is the mechanism to achieve loose-coupling between Objects dependencies. 
+2.IoC - Inversion of control is generic term, independent of language, 
+3.It is actually not create the objects but describe in which fashion object is being created.
+4.To achieve loose coupling and dynamic binding of the objects at runtime,
+
+-----------------------------------------------------------------------------------------------------------------------------
+10)Types of IOC container?
+There are two types of IoC containers. They are: BeanFactory. ApplicationContext.
+--------------------------------------------------------------------------------------
+11)what is dispached servlet?
+ 1.The DispatcherServlet is the front controller in Spring web applications. 
+2.It's used to create web applications and REST services in Spring MVC. 
+3.In a traditional Spring web application, this servlet is defined in the web.
+------------------------------------------------------------------------------------------------------------------------------
+12)difference between singleton and prototype?
+
+2.Singleton:-
+-------------
+ 1.Only one instance will be created for a single bean definition per Spring IoC container .
+2.and the same object will be shared for each request made for that bean.
+
+ Prototype:-
+-------------
+1. A new instance will be created for a single bean definition every time a request is made for that bean.
+----------------------------------------------------------------------------------------
+13)what is thread safe?
+1.Thread safety is the avoidance of data races--situations.
+2. in which data are set to either correct or incorrect values.
+3. Thread safety is a computer programming concept applicable to multi-threaded code.
+--------------------------------------------------------------------------------------------------------------------------------
+14)what is applicationcontext and event listerns?
+applicationcontext:-
+-----------------------
+1.ApplicationContext is the sub-interface of BeanFactory.
+2.BeanFactory provides basic functionalities and is recommended to use for lightweight applications.like mobile and applets.
+3.Application Context has a longer life cycle and remains in the memory throughout the lifetime of an application.
+event listerns:-
+-------------------------------------------------------
+15)What is the difference between @componentscan and @entity scan.
+1.@componentscan:-
+  ----------------
+1.@componentScan is used for scanning all your components those are marked as @controller,@service,@repository,@component etc..
+1.@entity:-
+  ----------
+1.@entity scan is used to scan all your entities those are marked @entity for all configured jpa in your application.
+----------------------------------------------------
+1.An event listener is a procedure in JavaScript that waits for an event to occur. 
+2.A simple example of an event is a user clicking the mouse or pressing a key on the keyboard.
+---------------------------------------------------------------------
+15)scope of IOC OR scope of spring?
+1.If a scope is set to singleton, the Spring IoC container creates exactly one instance of the object defined by that bean definition. 
+2.This single instance is stored in a cache of such singleton beans, and all subsequent requests and references for that named bean return the cached object.
+--------------------------------------------------------------------------
+16)How to create beans for pre-defined classes?
+Here we are going to discuss how to create a Spring Bean in 3 different ways as follows: 
+1.Creating Bean Inside an XML Configuration File (beans.xml)
+2.Using @Component Annotation
+3.Using @Bean Annotation
+-----------------------------------------------------------
+17)what is JDBC template?or spring JDBC?
+1.JdbcTemplate is a central class in the JDBC core package .
+2.that simplifies the use of JDBC and helps to avoid common errors.
+
+-----------------------------------------------------------------
+18)In query execution how records to come?
+SQL's from clause selects and joins your tables and is the first executed part of a query.
+---------------------------------------------------------------------
+19)How to create data source object?
+1.Create an instance of the appropriate DataSource implementation.
+2.Set the properties of the DataSource object.
+3.Register the object with the Java Naming and Directory Interface (JNDI) naming service.
+------------------------------------------------------------------
+20)which design pattern is used for JDBC?
+1.JdbcTemplate is more a strategy than template.
+2.The design pattern used is callback
+--------------------------------------------------------
+21)What is the internal process of JDBC?
+1.JDBC makes it possible to do establish a connection with a data source, send queries and update statements, and process the results.
+---------------------------------------------------------------------------
+23)difference between JDBC template&JDBC?
+-----------------------------------------------------------------------
+24)Purpose of service class?
+1.A Service class is used by a client to interact with some functionality in your application.
+ 
+2.Usually it is public, and has some business meaning. 
+
+3.For example, a TicketingService class might allow you to buyTicket, sellTicket and so on.
+------------------------------------------------------------------------------------
+1)what are the different annotations used in controller class?
+@Restcontroller
+@RequestMapping
+@postMapping
+@putMapping
+@DeleteMapping
+@getMapping
+@RequestBody
+@pathvariable
+@requestparam
+for exceptionhandling we use @RestcontrollerAdvice and @exceptionhandler.
+----------------------------------------------------------------------------
+2)how many ways we can create response entity object?
+we can crete response entity object in 3 ways those are 
+1.new response entity.
+2.responseEntity.ok
+3.responseEntity.status.Body.headers
+----------------------------------------------------------------------------
+3)what are the response statues?
+200---ok
+201---created resources
+400---bad request
+401--athentication error
+403---authorization error
+404---resources not found
+405---method not allowed
+406--content negotiation error
+409---conflict
+415---media not supported
+500---internal server error
+-------------------------------------------------------------
+4)how to implement pagenation?
+Best practices when implementing pagination
+1.Link pages sequentially.
+2.Use URLs correctly.@
+3.Avoid indexing URLs with filters or alternative sort orders.
+----------------------------------------------------------------
+5)how to upload file ?
+1.
+6?how to download file?
+---------------------------------------------------------
+7.spring mvc flow or rest flow these are the same 
+
+
+------------------------------------------------
+6)Event listeners in application context?
+
+1.contextstartedevent.
+2.contextrefershedevent.
+3.contextstopedevents.
+4.contextclosedevents.
+5.requeststandedevents.
+---------------------------------------------------
+7)difference between mvc module and rest module?
+
+mvc module:-
+-------------
+1.controller.
+2.return type is model and view.
+3.html and data it will return.
+4.tightly coupled with presentation.
+5.spring mvc applications used by end users.
+6.MVC is about how the inner side of your app works. 
+
+rest module:-
+----------------
+1.restcontroller.
+2.responseentity is return type of restcontroller.
+3.json data will  return .
+4.there is no tightly coupled with data
+5.spring rest application used by consumer application.
+6.REST is about how your app "talks" with other apps.
+----------------------------------------------------------
+
+
+
+
+
+---------------------------------------------------
+1)spring boot annotations
+@SpringBootApplication
+@SpringBootConfiguration
+@configurationproperty
+@profile
+@EnableAutoConfiguration
+@ComponentScan
+
+------------------------------------------------------
+2)Interceptor.
+1.It is a class it execute the logic before dispatch servlet is called the controller method.
+interceptors has 3 methods they are
+1.prehandler:-It is call before actual handler method is invoke.
+2.posthandler:-It is invoke ,after the handler method is invoked,but before the view is rendered.
+3.aftercomplition:-This method is called after the view rendered.
+-----------------------------------------------------------------
+3)Rest flow 
+->request send by the users 
+->dispatch sevlet 
+->handler mapping class,
+->call to the method(or)endpoints rest controller method, 
+->method return the response entity ,
+->data converters(or)data formatters.
+->json to java object conversion.
+->response 
+----------------------
+advantages of spring framework?
+1.the spring applications are  loosely coupled because of depedency injection.
+2.spring framework provides template for jdbc,hibernate,jpa etc..
+3.there is no need to write much code.
+4.we dont need to write the code for exception handling,creation object,creating connection,creating statement,commiting transation,closing connection etc..
+5.we need to write the code for excution only.
+6.makes the code easy to text.
+7.spring-framework is lightweight because of it's pojo implementations.
+8.it provides for catching transation and validation.
+-------------------------------------------------------------------------------------------
+4)MVC flow
+1.user send a request
+2.dispatch servlet
+3.handler mapping(call the approprite method).
+4.call the controller class method.
+5.return model view object.
+6.view resolver(reslove the view).
+7.response as HTML.
+------------------------------------------------
+5)soap webservies?
+->soap protocal is build on top of http protocal.
+->soap web servies uses xml as data formatters.
+->to work with soap web servies we need extra framework to understand soap protocal.
+->because of all these reasons soap web services are heavy weight.
+->(xml itself is a heavy weight)
+-------------------------------------------------------------
+6)Rest webservices?
+1.It uses only http protocal.
+2.no extra protocal require for this webservice.
+3.rest webservices use by formatters like json,xml(or)binary etc..
+4.rest webservice do not need extra frame works to understand.
+5.rest web service are lightweight
+6.json is light weight.
+
+----------------------------------------------------------
+7)Interoperable:-
+  -------------
+1.In this approach ,communication among multiple applications developed in different technologies like java,pyton,php etc.
+----------------------------------------------------------------------------------------------------------------------------------------
+                                                           MICROSERVICES
+                                                          ***************
+1.project got divided into two major parts.
+     	1. UI part
+     	2. Backend part
+
+2. UI part got implemented in Front end mvc frame work which is Single Page Application (SPA) based using Angular.
+
+3. BackEnd part is implemented using Microservices Architecture.
+
+4. As part of backend every request is received by zuul server, act as gateway or proxy server.
+
+5. It contacts Eureka server i.e registry and lookup server to get details of requested microservice.
+
+6. Uses ribbon to have load balancer.
+
+7. Then request moves to specific microservice where our business logic resides.
+     	It contact authorization server and verifies 
+ 	token if it is fine returns proper data otherwise it gives error. 
+     
+8. Configuration details for all microservices are provided in common place which is configuration server. 
+     Each microservice is divided into controller,service , dao and utility layers.
+
+9. communication among layers is happening with the help of pojo classes.
+
+10. Used Jpa repository and hibernate to develop dao layer.
+
+11. Service is responsible for server side validation ,Transactions and business logic.
+
+12. Controlling logic is done in controllers.
+returning ResponseEntity by including status,headers and body is the major role of controller.
+basic client data validations are also done in controller.
+     
+13.Exception Handling is done using ControllerAdvice and @ExceptionHandling.
+     
+14. Dependency injection is done using spring ioc.
+
+15. Spring boot and maven is used to develop micro rest applications.
+
+16. slf4j is used for logging.
+
+17. Communication b/w FrontEnd and BackEnd is the rough Json.
+
+18. Used @crossorgin to be accessed by Angular or any other consumer application.
+---------------------------------------------------------------------------------------------
+project explanation:-
+----------------------
+1)Proficient in utilizing industry-standard movie making pre-production software for efficient planning and organization of film projects.
+2)Experience in leveraging software tools to manage scriptwriting, storyboarding, scheduling, budgeting, and casting processes.
+3)Skilled in collaborating with production teams, directors, and stakeholders to streamline workflows and ensure project alignment.
+4)Proficient in software platforms such as Celtx, Final Draft, Movie Magic Scheduling, Avid Media Composer, or similar tools.
+5)Demonstrated ability to effectively use pre-production software to enhance creative decision-making and ensure smooth production processes.
+6)Strong attention to detail and organizational skills to manage project elements and timelines effectively.
+7)Adaptability in learning and utilizing new software solutions to optimize movie pre-production workflows.
+8)Proven track record of successfully contributing to the pre-production phase of film projects through effective use of software tools.
+
